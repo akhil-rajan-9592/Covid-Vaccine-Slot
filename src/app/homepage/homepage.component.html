@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="right-box">
+    <div class="top-bar">
+      <div class="title">Covid-19 Slot Details</div>
+    </div>
+    <div class="sub-container">
+      <div class="list-box">
+        <div class="form-container">
+          <div class="card">
+            <h1>Search Slots</h1>
+            <form id="contact">
+              <label>Pincode</label>
+              <input placeholder="Subject Name" [(ngModel)]="pincode" name="pincode" type="text" tabindex="1" placeholder="110001" >
+              <label>Date</label>
+              <input placeholder="Subject Name" [(ngModel)]="dates" name="dates" type="text" tabindex="1"  placeholder="31-03-2021">
+              <button name="submit" type="submit" id="contact-submit" (click)="submitSub()">Search</button>
+            </form>
+          </div>
+        </div>
+        <div id="results" *ngIf="results">
+          <form *ngFor="let result of results.sessions">
+            <fieldset>
+              <div>
+                <label for="name" class="mid">Date</label>
+                <input type="text" name="name" id="name" value={{result.date}} tabindex="1" disabled>
+              </div>
+              <div>
+                  <label for="name" class="mid">Center ID</label>
+                  <input type="text" name="name" id="name" value={{result.center_id}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">District Name</label>
+                <input type="text" name="name" id="name" value={{result.district_name}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Pincode</label>
+                <input type="text" name="name" id="name" value={{result.pincode}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Hospital Name</label>
+                <input type="text" name="name" id="name" value={{result.name}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Hospital Address</label>
+                <input type="text" name="name" id="name" value={{result.address}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Hospital Block</label>
+                <input type="text" name="name" id="name" value={{result.block_name}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Min Age Limit</label>
+                <input type="text" name="name" id="name" value={{result.min_age_limit}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Available Capacity</label>
+                <input type="text" name="name" id="name" value={{result.available_capacity}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Available Capacity Dose1</label>
+                <input type="text" name="name" id="name" value={{result.available_capacity_dose1}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Available Capacity Dose2</label>
+                <input type="text" name="name" id="name" value={{result.available_capacity_dose2}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Fee</label>
+                <input type="text" name="name" id="name" value={{result.fee}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Fee Type</label>
+                <input type="text" name="name" id="name" value={{result.fee_type}} tabindex="1" disabled>
+              </div>
+              <div>
+                <label for="name" class="mid">Slots</label>
+                <input type="text" name="name"  value={{slot}} *ngFor="let slot of result.slots" disabled>
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
